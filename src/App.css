@@ -1,7 +1,16 @@
 @import 'tailwindcss';
 
 body {
-  background-color: #1d2433;
-  color: #d7dce2;
+  /* background-color: #1d2433; */
+  background-color: #f4efca;
+  color: #29292b;
   font-family: sans-serif;
+}
+
+.accent-color {
+  color: #f66435;
+}
+
+.accent-hover:hover {
+  color: #f66435;
 }

@@ -36,7 +36,7 @@ function App() {
       </div>
 
       <main className="min-h-screen pt-10 mx-40">
-        <section className="p-20 min-h-screen">
+        <section className="p-30 min-h-screen">
           <div className="mb-16 lg:pr-14 pt-10">
             <h1 className="mb-4">
               <span className="accent-color">Hello,</span>
@@ -48,38 +48,38 @@ function App() {
             <h3 className="text-4xl font-semibold opacity-60">
               I'm a web developer.
             </h3>
-            {/* <div className="mt-16 flex justify-between max-w-[60px]">
-              <a
-                href="https://github.com/FridaWikman"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="accent-hover hover:rotate-6 transition-transform"
-              >
-                <Icon icon="hugeicons:github" width="25" height="25" />
-              </a>
-              <a
-                href=""
-                className="accent-hover hover:rotate-6 transition-transform"
-              >
-                <Icon icon="hugeicons:linkedin-02" width="25" height="25" />
-              </a>
-            </div> */}
+            <button class="bg-transparent  accent-color  font-semibold mt-5  py-1 px-4 border  hover:border-transparent rounded">
+              Get in touch
+            </button>
           </div>
-          {/* <div className="content-div lg:pr-8">
-          <h4 className="text-xl font-medium mb-2">About</h4>
-          <p className="text-base font-semibold opacity-60 leading-normal">
+        </section>
+        <section id="about" className="p-30 max-w-9/10 ">
+          <h4 id="about" className="text-4xl font-bold">
+            ABOUT ME
+          </h4>
+          <p className="text-base max-w-9/10 opacity-60 leading-normal">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum
             repellendus numquam ratione dignissimos, inventore mollitia
             voluptatibus sapiente nostrum aliquid soluta beatae minus ipsum
             omnis ex dolorum tenetur nobis commodi nisi.
           </p>
-        </div> */}
         </section>
-        <section id="about" className="p-20 max-w-9/10 ">
+        <section id="projects" className="p-30 max-w-9/10 ">
           <h4 id="about" className="text-4xl font-bold">
-            About me
+            PROJECTS
           </h4>
-          <p className="text-base  opacity-60 leading-normal">
+          <p className="text-base max-w-9/10 opacity-60 leading-normal">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum
+            repellendus numquam ratione dignissimos, inventore mollitia
+            voluptatibus sapiente nostrum aliquid soluta beatae minus ipsum
+            omnis ex dolorum tenetur nobis commodi nisi.
+          </p>
+        </section>
+        <section id="contact" className="p-30 max-w-9/10 ">
+          <h4 id="about" className="text-4xl font-bold">
+            CONTACT
+          </h4>
+          <p className="text-base max-w-9/10 opacity-60 leading-normal">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum
             repellendus numquam ratione dignissimos, inventore mollitia
             voluptatibus sapiente nostrum aliquid soluta beatae minus ipsum

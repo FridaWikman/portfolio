@@ -15,3 +15,7 @@ body {
 .accent-hover:hover {
   color: #f66435;
 }
+
+.orange-bg {
+  background-color: #f66435;
+}

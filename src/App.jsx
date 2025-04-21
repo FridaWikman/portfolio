@@ -1,5 +1,6 @@
 import './App.css'
 import { Icon } from '@iconify/react'
+import Projects from './components/Projects'
 
 function App() {
   return (
@@ -32,31 +33,38 @@ function App() {
         <a href="" className="accent-hover hover:rotate-6 transition-transform">
           <Icon icon="hugeicons:linkedin-02" width="25" height="25" />
         </a>
-        <div className="accent-color w-px h-24 border-l border border-accent mt-4"></div>
+        <div className="accent-color w-px h-24 border-l border mt-4"></div>
       </div>
 
-      <main className="min-h-screen pt-10 mx-40">
-        <section className="p-30 min-h-screen">
+      <main className="min-h-screen pt-10 px-20 md:px-30 xl:px-40">
+        <section className="max-w-4xl mx-auto py-20 px-4 min-h-screen">
           <div className="mb-16 lg:pr-14 pt-10">
             <h1 className="mb-4">
               <span className="accent-color">Hello,</span>
               <span className="opacity-60"> my name is</span>
             </h1>
-            <h2 className="accent-color text-7xl font-semibold text-nowrap">
-              Frida Wikman.
+            <h2 className="accent-color font-accent-color text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold whitespace-nowrap text-nowrap">
+              Frida Wikman
             </h2>
-            <h3 className="text-4xl font-semibold opacity-60">
+            <h3 className=" font-text-xl sm:text-2xl md:text-4xl font-semibold opacity-60 mt-2 opacity-60">
               I'm a web developer.
             </h3>
-            <button class="bg-transparent  accent-color  font-semibold mt-5  py-1 px-4 border  hover:border-transparent rounded">
+            <button className="bg-transparent accent-color font-semibold mt-5 py-1 px-4 border hover:border-transparent hover:bg-grey-300 rounded">
               Get in touch
             </button>
           </div>
         </section>
-        <section id="about" className="p-30 max-w-9/10 ">
-          <h4 id="about" className="text-4xl font-bold">
-            ABOUT ME
-          </h4>
+        <section
+          id="about"
+          className="min-h-screen space-y-8 max-w-4xl mx-auto py-20 px-4"
+        >
+          <div>
+            <h4 className="text-4xl font-bold whitespace-nowrap">ABOUT ME</h4>
+            {/* <div
+              className="mt-2 w-20 h-0.5 mx-auto rounded"
+              style={{ backgroundColor: '#f66435' }}
+            ></div> */}
+          </div>
           <p className="text-base max-w-9/10 opacity-60 leading-normal">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum
             repellendus numquam ratione dignissimos, inventore mollitia
@@ -64,22 +72,13 @@ function App() {
             omnis ex dolorum tenetur nobis commodi nisi.
           </p>
         </section>
-        <section id="projects" className="p-30 max-w-9/10 ">
-          <h4 id="about" className="text-4xl font-bold">
-            PROJECTS
-          </h4>
-          <p className="text-base max-w-9/10 opacity-60 leading-normal">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum
-            repellendus numquam ratione dignissimos, inventore mollitia
-            voluptatibus sapiente nostrum aliquid soluta beatae minus ipsum
-            omnis ex dolorum tenetur nobis commodi nisi.
-          </p>
-        </section>
-        <section id="contact" className="p-30 max-w-9/10 ">
-          <h4 id="about" className="text-4xl font-bold">
-            CONTACT
-          </h4>
-          <p className="text-base max-w-9/10 opacity-60 leading-normal">
+        <Projects />
+        <section
+          id="contact"
+          className="min-h-screen max-w-4xl mx-auto py-20 px-4"
+        >
+          <h4 className="text-4xl font-bold">CONTACT</h4>
+          <p className="text-base max-w-4xl opacity-60 leading-normal">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum
             repellendus numquam ratione dignissimos, inventore mollitia
             voluptatibus sapiente nostrum aliquid soluta beatae minus ipsum

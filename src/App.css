@@ -19,3 +19,7 @@ body {
 .orange-bg {
   background-color: #f66435;
 }
+
+.hover-text-cream:hover {
+  color: #f4efca;
+}

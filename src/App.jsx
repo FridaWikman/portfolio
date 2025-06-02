@@ -3,13 +3,33 @@ import { Icon } from '@iconify/react'
 import Projects from './components/Projects'
 import { useEffect, useState } from 'react'
 import Experience from './components/Experience'
+import useWindowDimensions from './components/useWindowSize'
+// import Link from 'next/link'
 
 function App() {
   const [showHeader, setShowHeader] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
+  const [showBurger, setShowBurger] = useState(false)
+  const { width } = useWindowDimensions()
+  const [showScrollTop, setShowScrollTop] = useState(false)
+
+  const links = [
+    { name: 'About', path: '#about' },
+    { name: 'Experience', path: '#experience' },
+    { name: 'Projects', path: '#projects' },
+    { name: 'Contact', path: '#contact' },
+  ]
 
   useEffect(() => {
     const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 300)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  useEffect(() => {
+    const handleNavScroll = () => {
       const currentScrollY = window.scrollY
 
       if (currentScrollY > lastScrollY) {
@@ -21,36 +41,83 @@ function App() {
       setLastScrollY(currentScrollY)
     }
 
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleNavScroll)
 
-    return () => window.removeEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleNavScroll)
   }, [lastScrollY])
+
+  useEffect(() => {
+    if (width > 768) setShowBurger(false)
+  }, [width])
 
   return (
     <>
       <header
-        className={`fixed top-0 right-0 w-full py-6 z-50 transition-transform duration-300 ${
+        className={`flex items-center justify-end gap-8 fixed top-0 right-0 w-full py-6 z-50 transition-transform duration-300 ${
           showHeader ? 'translate-y-0' : '-translate-y-full'
         }`}
       >
         <nav className="flex items-center justify-end gap-8">
-          <a href="#about" className="text-base font-medium accent-hover">
-            About
-          </a>
-          <a href="#" className="text-base font-medium accent-hover">
-            Experience & Education
-          </a>
-          <a href="#projects" className="text-base font-medium accent-hover">
-            Projects
-          </a>
-          {/* <div className="relative"> */}
-          <a href="#contact" className="text-base font-medium accent-hover">
-            Contact
-          </a>
-          <div className="accent-color w-24 border-l border border-accent"></div>
-          {/* </div> */}
+          <div className="hidden md:flex gap-8">
+            {links.map((link, index) => (
+              <a
+                href={link.path}
+                key={index}
+                className="text-base font-medium accent-hover"
+              >
+                {link.name}
+              </a>
+            ))}
+          </div>
+          <div className="accent-color w-24 border-l border border-accent hidden md:block"></div>
         </nav>
+        <div className="md:hidden flex justify-end">
+          {/* Öppna meny-knapp */}
+          {!showBurger && (
+            <button
+              className="accent-hover pe-6 cursor-pointer"
+              onClick={() => setShowBurger(true)}
+              aria-label="Öppna meny"
+            >
+              <Icon icon="material-symbols:menu" width="32" height="32" />
+            </button>
+          )}
+        </div>
       </header>
+      {showBurger && (
+        <div
+          className={`fixed top-0 right-0 h-full w-[50%] sm:w-[30%] bg-[#f4efca] shadow-lg z-40 transition-transform duration-300 z-60 ${
+            showBurger ? 'translate-x-0' : 'translate-x-full'
+          }`}
+        >
+          <div className="relative h-full w-full px-6 pt-6 flex flex-col items-end">
+            <button
+              onClick={() => setShowBurger(false)}
+              className="accent-hover mb-8 cursor-pointer"
+              aria-label="Stäng meny"
+            >
+              <Icon
+                icon="material-symbols:close-rounded"
+                width="32"
+                height="32"
+              />
+            </button>
+            <nav className="flex flex-col items-end gap-6 text-2xl w-full">
+              {links.map((link, index) => (
+                <a
+                  key={index}
+                  href={link.path}
+                  className="accent-hover transition-colors duration-200"
+                  onClick={() => setShowBurger(false)}
+                >
+                  {link.name}
+                </a>
+              ))}
+            </nav>
+          </div>
+        </div>
+      )}
+
       <div className="fixed bottom-0 left-6 flex flex-col items-center gap-4 z-50">
         {/* Ikoner */}
         <a
@@ -140,6 +207,19 @@ function App() {
             </a>
           </div>
         </section>
+        {showScrollTop && (
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="fixed bottom-6 right-6 z-50 bg-[#f4efca] text-black p-3 rounded-full shadow-lg hover:bg-[#e0dab5] transition"
+            aria-label="Till toppen"
+          >
+            <Icon
+              icon="material-symbols:keyboard-arrow-up-rounded"
+              width="28"
+              height="28"
+            />
+          </button>
+        )}
       </main>
     </>
   )

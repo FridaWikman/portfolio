@@ -1,60 +1,60 @@
-import './App.css'
-import { Icon } from '@iconify/react'
-import Projects from './components/Projects'
-import { useEffect, useState } from 'react'
-import Experience from './components/Experience'
-import useWindowDimensions from './components/useWindowSize'
+import "./App.css";
+import { Icon } from "@iconify/react";
+import Projects from "./components/Projects";
+import { useEffect, useState } from "react";
+import Experience from "./components/Experience";
+import useWindowDimensions from "./components/useWindowSize";
 // import Link from 'next/link'
 
 function App() {
-  const [showHeader, setShowHeader] = useState(true)
-  const [lastScrollY, setLastScrollY] = useState(0)
-  const [showBurger, setShowBurger] = useState(false)
-  const { width } = useWindowDimensions()
-  const [showScrollTop, setShowScrollTop] = useState(false)
+  const [showHeader, setShowHeader] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [showBurger, setShowBurger] = useState(false);
+  const { width } = useWindowDimensions();
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
   const links = [
-    { name: 'About', path: '#about' },
-    { name: 'Experience', path: '#experience' },
-    { name: 'Projects', path: '#projects' },
-    { name: 'Contact', path: '#contact' },
-  ]
+    { name: "About", path: "#about" },
+    { name: "Experience", path: "#experience" },
+    { name: "Projects", path: "#projects" },
+    { name: "Contact", path: "#contact" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
-      setShowScrollTop(window.scrollY > 300)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+      setShowScrollTop(window.scrollY > 300);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     const handleNavScroll = () => {
-      const currentScrollY = window.scrollY
+      const currentScrollY = window.scrollY;
 
       if (currentScrollY > lastScrollY) {
-        setShowHeader(false) // scrollar ner
+        setShowHeader(false); // scrollar ner
       } else {
-        setShowHeader(true) // scrollar upp
+        setShowHeader(true); // scrollar upp
       }
 
-      setLastScrollY(currentScrollY)
-    }
+      setLastScrollY(currentScrollY);
+    };
 
-    window.addEventListener('scroll', handleNavScroll)
+    window.addEventListener("scroll", handleNavScroll);
 
-    return () => window.removeEventListener('scroll', handleNavScroll)
-  }, [lastScrollY])
+    return () => window.removeEventListener("scroll", handleNavScroll);
+  }, [lastScrollY]);
 
   useEffect(() => {
-    if (width > 768) setShowBurger(false)
-  }, [width])
+    if (width > 768) setShowBurger(false);
+  }, [width]);
 
   return (
     <>
       <header
         className={`flex items-center justify-end gap-8 fixed top-0 right-0 w-full py-6 z-50 transition-transform duration-300 ${
-          showHeader ? 'translate-y-0' : '-translate-y-full'
+          showHeader ? "translate-y-0" : "-translate-y-full"
         }`}
       >
         <nav className="flex items-center justify-end gap-8">
@@ -87,7 +87,7 @@ function App() {
       {showBurger && (
         <div
           className={`fixed top-0 right-0 h-full w-[50%] sm:w-[30%] bg-[#f4efca] shadow-lg z-40 transition-transform duration-300 z-60 ${
-            showBurger ? 'translate-x-0' : 'translate-x-full'
+            showBurger ? "translate-x-0" : "translate-x-full"
           }`}
         >
           <div className="relative h-full w-full px-6 pt-6 flex flex-col items-end">
@@ -127,7 +127,11 @@ function App() {
         >
           <Icon icon="hugeicons:github" width="25" height="25" />
         </a>
-        <a href="" className="accent-hover hover:rotate-6 transition-transform">
+        <a
+          href="https://www.linkedin.com/in/frida-wikman-b90aba289/"
+          target="_blank"
+          className="accent-hover hover:rotate-6 transition-transform"
+        >
           <Icon icon="hugeicons:linkedin-02" width="25" height="25" />
         </a>
         <div className="accent-color w-px h-24 border-l border mt-4"></div>
@@ -148,9 +152,9 @@ function App() {
             </h3>
             <button
               onClick={() => {
-                const element = document.getElementById('contact')
+                const element = document.getElementById("contact");
                 if (element) {
-                  element.scrollIntoView({ behavior: 'smooth' })
+                  element.scrollIntoView({ behavior: "smooth" });
                 }
               }}
               className="cursor-pointer bg-transparent text-orange-500 font-semibold mt-5 py-1 px-4 border border-orange-500 rounded hover:bg-orange-500 hover:text-[#f4efca] hover:border-orange-500 transition-colors duration-300"
@@ -167,7 +171,7 @@ function App() {
             <h4 className="text-4xl font-bold">ABOUT ME</h4>
             <div
               className="mt-2 w-12 h-0.5 rounded"
-              style={{ backgroundColor: '#f66435' }}
+              style={{ backgroundColor: "#f66435" }}
             ></div>
           </div>
           <p className="text-base max-w-9/10 opacity-60 leading-normal">
@@ -187,7 +191,7 @@ function App() {
             <h4 className="text-4xl font-bold">CONTACT</h4>
             <div
               className="mt-2 w-12 h-0.5 rounded"
-              style={{ backgroundColor: '#f66435' }}
+              style={{ backgroundColor: "#f66435" }}
             ></div>
           </div>
           <div className="text-base max-w-4xl leading-normal space-y-4">
@@ -198,7 +202,7 @@ function App() {
 
             <a href="mailto:fridamariawikman@gmail.com?" className="flex gap-2">
               <span>
-                {' '}
+                {" "}
                 <Icon icon="hugeicons:mail-01" width="25" height="25" />
               </span>
               <span className="accent-color underline">
@@ -209,7 +213,7 @@ function App() {
         </section>
         {showScrollTop && (
           <button
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="fixed bottom-6 right-6 z-50 bg-[#f4efca] text-black p-3 rounded-full shadow-lg hover:bg-[#e0dab5] transition"
             aria-label="Till toppen"
           >
@@ -222,7 +226,7 @@ function App() {
         )}
       </main>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -118,7 +118,7 @@ function App() {
         </div>
       )}
 
-      <div className="fixed bottom-0 left-6 flex flex-col items-center gap-4 z-50">
+      <div className="hidden sm:flex fixed bottom-0 left-6 flex flex-col items-center gap-4 z-50">
         {/* Ikoner */}
         <a
           href="https://github.com/FridaWikman"
@@ -137,8 +137,8 @@ function App() {
         <div className="accent-color w-px h-24 border-l border mt-4"></div>
       </div>
 
-      <main className="min-h-screen pt-10 px-20 md:px-30 xl:px-40">
-        <section className="max-w-4xl mx-auto py-20 px-4 min-h-screen">
+      <main className="min-h-screen pt-10 sm:px-20 md:px-30 xl:px-40">
+        <section className="max-w-4xl mx-auto py-20 px-10 sm:px-4 min-h-screen">
           <div className="mb-16 lg:pr-14 pt-10">
             <h1 className="mb-4">
               <span className="accent-color">Hello,</span>
@@ -174,7 +174,7 @@ function App() {
               style={{ backgroundColor: "#f66435" }}
             ></div>
           </div>
-          <p className="text-base max-w-9/10 opacity-60 leading-normal">
+          <p className="text-base opacity-60 leading-normal">
             Hi! I’m a web developer who enjoys crafting beautiful and functional
             websites. I love solving problems with code and turning creative
             ideas into real, interactive experiences. When I’m not coding,
@@ -185,7 +185,7 @@ function App() {
         <Projects />
         <section
           id="contact"
-          className="min-h-screen max-w-4xl mx-auto py-20 px-4"
+          className="flex flex-col min-h-screen max-w-4xl mx-auto pt-20 px-4"
         >
           <div className="text-start inline-block mb-10">
             <h4 className="text-4xl font-bold">CONTACT</h4>
@@ -195,7 +195,7 @@ function App() {
             ></div>
           </div>
           <div className="text-base max-w-4xl leading-normal space-y-4">
-            <p className=" opacity-60">
+            <p className="opacity-60">
               Feel free to reach out! I'm always open to new projects,
               collaborations, or just a friendly chat.
             </p>
@@ -209,6 +209,24 @@ function App() {
                 fridamariawikman@gmail.com
               </span>
             </a>
+          </div>
+          <div className="flex sm:hidden justify-center mt-auto">
+            <div className="flex align-items gap-2 mb-4">
+              <a
+                href="https://github.com/FridaWikman"
+                target="_blank"
+                className="accent-hover hover:rotate-6 transition-transform"
+              >
+                <Icon icon="hugeicons:github" width="20" height="20" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/frida-wikman-b90aba289/"
+                target="_blank"
+                className="accent-hover hover:rotate-6 transition-transform"
+              >
+                <Icon icon="hugeicons:linkedin-02" width="20" height="20" />
+              </a>
+            </div>
           </div>
         </section>
         {showScrollTop && (

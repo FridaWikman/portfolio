@@ -87,7 +87,7 @@ export default function Projects() {
               className=" rounded shadow-lg"
             />
             {project.title === "UKAA" && (
-              <p className="italic text-sm text-gray-500 mt-1">
+              <p className="italic text-xs text-gray-500 mt-1">
                 The personal data shown in the image is fictitious.
               </p>
             )}

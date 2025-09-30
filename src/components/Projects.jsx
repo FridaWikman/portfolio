@@ -55,6 +55,7 @@ const projects = [
     ],
     image: PinpointImg,
     urls: {
+      "https://pinpoint-dashboard-one.vercel.app/": "hugeicons:globe-02",
       "https://github.com/FridaWikman/pinpoint": "hugeicons:link-04",
     },
   },
@@ -136,15 +137,3 @@ export default function Projects() {
     </section>
   );
 }
-
-// <section id="projects" className="p-30 max-w-9/10 ">
-// <h4 id="about" className="text-4xl font-bold">
-//   PROJECTS
-// </h4>
-// <p className="text-base max-w-9/10 opacity-60 leading-normal">
-//   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum
-//   repellendus numquam ratione dignissimos, inventore mollitia
-//   voluptatibus sapiente nostrum aliquid soluta beatae minus ipsum
-//   omnis ex dolorum tenetur nobis commodi nisi.
-// </p>
-// </section>

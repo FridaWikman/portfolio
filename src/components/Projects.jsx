@@ -23,24 +23,6 @@ const projects = [
     urls: { "https://sambruk.se/ukaa/": "hugeicons:information-square" },
   },
   {
-    title: "Book Review Platform",
-    description:
-      "A fullstack web application where users can sign in, browse, and leave reviews on books.",
-    stack: [
-      "TypeScript",
-      "React",
-      "PostgreSQL",
-      "MongoDB",
-      "Node.js",
-      "Express",
-    ],
-    image: BooklyBooksImg,
-    urls: {
-      "http://74.241.241.32/": "hugeicons:globe-02",
-      "https://github.com/haijaa/Bookly": "hugeicons:link-04",
-    },
-  },
-  {
     title: "Pinpoint Dashboard",
     description:
       "A fullstack web application with complete CRUD functionality and end-to-end testing using Cypress.",
@@ -56,7 +38,25 @@ const projects = [
     image: PinpointImg,
     urls: {
       "https://pinpoint-dashboard-one.vercel.app/": "hugeicons:globe-02",
-      "https://github.com/FridaWikman/pinpoint": "hugeicons:link-04",
+      "https://github.com/FridaWikman/pinpoint": "hugeicons:github",
+    },
+  },
+  {
+    title: "Book Review Platform",
+    description:
+      "A fullstack web application where users can sign in, browse, and leave reviews on books.",
+    stack: [
+      "TypeScript",
+      "React",
+      "PostgreSQL",
+      "MongoDB",
+      "Node.js",
+      "Express",
+    ],
+    image: BooklyBooksImg,
+    urls: {
+      // "http://74.241.241.32/": "hugeicons:globe-02",
+      "https://github.com/haijaa/Bookly": "hugeicons:github",
     },
   },
 ];

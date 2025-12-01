@@ -6,23 +6,6 @@ import { Icon } from "@iconify/react";
 
 const projects = [
   {
-    title: "UKAA",
-    description:
-      "Municipal follow-up system. Upgraded the system from Vue 2/Nuxt 2 to Vue 3/Nuxt 3 and transitioned the code from JavaScript to TypeScript.",
-    stack: [
-      "TypeScript",
-      "Vue",
-      "Nuxt",
-      "BootstrapVue-Next",
-      "Pinia",
-      "VeeValidate",
-      "Zod",
-      "Day.js",
-    ],
-    image: UKAAImg,
-    urls: { "https://sambruk.se/ukaa/": "hugeicons:information-square" },
-  },
-  {
     title: "Pinpoint Dashboard",
     description:
       "A fullstack web application with complete CRUD functionality and end-to-end testing using Cypress.",
@@ -40,6 +23,23 @@ const projects = [
       "https://pinpoint-dashboard-one.vercel.app/": "hugeicons:globe-02",
       "https://github.com/FridaWikman/pinpoint": "hugeicons:github",
     },
+  },
+  {
+    title: "UKAA",
+    description:
+      "Municipal follow-up system. Upgraded the system from Vue 2/Nuxt 2 to Vue 3/Nuxt 3 and transitioned the code from JavaScript to TypeScript.",
+    stack: [
+      "TypeScript",
+      "Vue",
+      "Nuxt",
+      "BootstrapVue-Next",
+      "Pinia",
+      "VeeValidate",
+      "Zod",
+      "Day.js",
+    ],
+    image: UKAAImg,
+    urls: { "https://sambruk.se/ukaa/": "hugeicons:information-square" },
   },
   {
     title: "Book Review Platform",

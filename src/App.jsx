@@ -15,8 +15,8 @@ function App() {
 
   const links = [
     { name: "About", path: "#about" },
-    { name: "Experience", path: "#experience" },
     { name: "Projects", path: "#projects" },
+    { name: "Experience", path: "#experience" },
     { name: "Contact", path: "#contact" },
   ];
 
@@ -86,7 +86,7 @@ function App() {
       </header>
       {showBurger && (
         <div
-          className={`fixed top-0 right-0 h-full w-[50%] sm:w-[30%] bg-[#f4efca] shadow-lg z-40 transition-transform duration-300 z-60 ${
+          className={`fixed top-0 right-0 h-full w-[50%] sm:w-[30%] bg-[#f4efca] shadow-lg transition-transform duration-300 z-60 ${
             showBurger ? "translate-x-0" : "translate-x-full"
           }`}
         >
@@ -114,11 +114,27 @@ function App() {
                 </a>
               ))}
             </nav>
+            <div className="flex align-items gap-2 mb-4 mt-auto">
+              <a
+                href="https://github.com/FridaWikman"
+                target="_blank"
+                className="accent-hover hover:rotate-6 transition-transform"
+              >
+                <Icon icon="hugeicons:github" width="20" height="20" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/frida-wikman-b90aba289/"
+                target="_blank"
+                className="accent-hover hover:rotate-6 transition-transform"
+              >
+                <Icon icon="hugeicons:linkedin-02" width="20" height="20" />
+              </a>
+            </div>
           </div>
         </div>
       )}
 
-      <div className="hidden sm:flex fixed bottom-0 left-6 flex flex-col items-center gap-4 z-50">
+      <div className="hidden sm:flex fixed bottom-0 left-6 flex-col items-center gap-4 z-50">
         {/* Ikoner */}
         <a
           href="https://github.com/FridaWikman"
@@ -147,7 +163,7 @@ function App() {
             <h2 className="accent-color font-accent-color text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold whitespace-nowrap text-nowrap">
               Frida Wikman
             </h2>
-            <h3 className=" font-text-xl sm:text-2xl md:text-4xl font-semibold opacity-60 mt-2 opacity-60">
+            <h3 className=" font-text-xl sm:text-2xl md:text-4xl font-semibold mt-2 opacity-60">
               I'm a web developer.
             </h3>
             <button
@@ -181,8 +197,8 @@ function App() {
             you’ll find me spending time in the forest or enjoying a good book.
           </p>
         </section>
-        <Experience />
         <Projects />
+        <Experience />
         <section
           id="contact"
           className="flex flex-col min-h-screen max-w-4xl mx-auto pt-20 px-4"
@@ -200,33 +216,26 @@ function App() {
               collaborations, or just a friendly chat.
             </p>
 
-            <a href="mailto:fridamariawikman@gmail.com?" className="flex gap-2">
+            <a
+              href="mailto:fridamariawikman@gmail.com?"
+              className="flex gap-2 accent-hover"
+            >
               <span>
                 {" "}
                 <Icon icon="hugeicons:mail-01" width="25" height="25" />
               </span>
-              <span className="accent-color underline">
-                fridamariawikman@gmail.com
-              </span>
+              <span className="accent-color">fridamariawikman@gmail.com</span>
             </a>
-          </div>
-          <div className="flex sm:hidden justify-center mt-auto">
-            <div className="flex align-items gap-2 mb-4">
-              <a
-                href="https://github.com/FridaWikman"
-                target="_blank"
-                className="accent-hover hover:rotate-6 transition-transform"
-              >
-                <Icon icon="hugeicons:github" width="20" height="20" />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/frida-wikman-b90aba289/"
-                target="_blank"
-                className="accent-hover hover:rotate-6 transition-transform"
-              >
-                <Icon icon="hugeicons:linkedin-02" width="20" height="20" />
-              </a>
-            </div>
+            <a
+              href="https://www.linkedin.com/in/frida-wikman-b90aba289/"
+              target="_blank"
+              className="flex gap-2 accent-hover items-center text-base"
+            >
+              <span>
+                <Icon icon="hugeicons:linkedin-02" width="25" height="25" />
+              </span>
+              <span className="accent-color pt-1">LinkedIn</span>
+            </a>
           </div>
         </section>
         {showScrollTop && (

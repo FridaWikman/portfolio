@@ -1,10 +1,22 @@
 import BooklyBooksImg from "../assets/images/bookly-books.png";
 import UKAAImg from "../assets/images/UKAA.png";
 import PinpointImg from "../assets/images/pinpoint.png";
+import FAWImg from "../assets/images/FAW.png";
 import "../App.css";
 import { Icon } from "@iconify/react";
 
 const projects = [
+  {
+    title: "FAW Consulting (Demo Site)",
+    description:
+      "A modern, responsive Next.js website built to showcase a fictional digital consulting company. Demonstrates skills in responsive design, component-based architecture, and clean UI using Tailwind CSS.",
+    stack: ["TypeScript", "Next.js", "React", "Tailwind CSS", "Vercel"],
+    image: FAWImg,
+    urls: {
+      "https://faw-tech-xdm1.vercel.app/": "hugeicons:globe-02",
+      "https://github.com/FridaWikman/FAW-Tech": "hugeicons:github",
+    },
+  },
   {
     title: "Pinpoint Dashboard",
     description:
